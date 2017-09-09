@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "prod": "npm run build && http-server public -p 3000 -a localhost -c 0",
-    "dev": "webpack-dev-server --config webpack.dev.js"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -28,9 +29,10 @@
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
     "path": "^0.12.7",
-    "webpack": "^3.5.5",
+    "webpack": "^3.5.6",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
-    "workbox-webpack-plugin": "^2.0.0"
+    "workbox-webpack-plugin": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^0.4.6"
   }
 }

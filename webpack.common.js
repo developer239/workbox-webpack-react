@@ -1,9 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
-const DIST_DIR = 'public'
+const DIST_DIR = 'public';
 
 module.exports = {
   entry: './src/index.js',
@@ -16,7 +16,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.html'
+      filename: 'index.html',
     }),
   ],
   module: {
@@ -27,10 +27,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
-          }
-        }
-      }
-    ]
+            presets: ['env'],
+          },
+        },
+      },
+    ],
   },
-}
+};

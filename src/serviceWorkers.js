@@ -1,14 +1,14 @@
-import { IS_DEVELOP } from './config'
+import { IS_DEVELOP } from './config';
 
 
 export function registerServiceWorkers() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
-      .then(function (registration) {
+      .then((registration) => {
         console.log('Service Worker registration successful with scope: ',
           registration.scope);
       })
-      .catch(function (err) {
+      .catch((err) => {
         console.log('Service Worker registration failed: ', err);
       });
   }
@@ -16,7 +16,7 @@ export function registerServiceWorkers() {
 
 export function unregisterServiceWorkers() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then((registration) => {
       registration.unregister();
     });
   }
@@ -24,8 +24,8 @@ export function unregisterServiceWorkers() {
 
 export function initializeServiceWorkers() {
   if (IS_DEVELOP) {
-    unregisterServiceWorkers()
+    unregisterServiceWorkers();
   } else {
-    registerServiceWorkers()
+    registerServiceWorkers();
   }
 }
