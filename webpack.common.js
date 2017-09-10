@@ -1,9 +1,9 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 
-const DIST_DIR = 'public';
+const DIST_DIR = 'public'
 
 module.exports = {
   entry: './src/index.js',
@@ -33,4 +33,4 @@ module.exports = {
       },
     ],
   },
-};
+}

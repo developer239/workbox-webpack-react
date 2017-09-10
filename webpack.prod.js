@@ -1,14 +1,14 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const workboxPlugin = require('workbox-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const common = require('./webpack.common');
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const workboxPlugin = require('workbox-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const common = require('./webpack.common')
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
-const DIST_DIR = 'public';
-const SRC_DIR = 'src';
+const DIST_DIR = 'public'
+const SRC_DIR = 'src'
 
 module.exports = merge(common, {
   plugins: [
@@ -33,4 +33,4 @@ module.exports = merge(common, {
       { from: path.join(SRC_DIR, '/tpl/manifest.json'), to: 'manifest.json' },
     ]),
   ],
-});
+})

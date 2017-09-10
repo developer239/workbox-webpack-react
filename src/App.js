@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 
 const App = () => (
@@ -8,6 +8,6 @@ const App = () => (
     </header>
     <article>Hello world!</article>
   </div>
-);
+)
 
-export default App;
+export default App

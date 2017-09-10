@@ -1,4 +1,4 @@
-import { IS_DEVELOP } from './config';
+import { IS_DEVELOP } from './config'
 
 
 export function registerServiceWorkers() {
@@ -8,11 +8,11 @@ export function registerServiceWorkers() {
     navigator.serviceWorker.register('sw.js')
       .then((registration) => {
         console.log('Service Worker registration successful with scope: ',
-          registration.scope);
+          registration.scope)
       })
       .catch((err) => {
-        console.log('Service Worker registration failed: ', err);
-      });
+        console.log('Service Worker registration failed: ', err)
+      })
   }
 }
 
@@ -21,15 +21,15 @@ export function unregisterServiceWorkers() {
   if ('serviceWorker' in navigator) {
     // eslint-disable-next-line
     navigator.serviceWorker.ready.then((registration) => {
-      registration.unregister();
-    });
+      registration.unregister()
+    })
   }
 }
 
 export function initializeServiceWorkers() {
   if (IS_DEVELOP) {
-    unregisterServiceWorkers();
+    unregisterServiceWorkers()
   } else {
-    registerServiceWorkers();
+    registerServiceWorkers()
   }
 }
