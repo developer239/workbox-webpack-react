@@ -9,19 +9,20 @@ const DIST_DIR = 'public'
 module.exports = {
   entry: './src/index.js',
   output: {
+    publicPath: '/',
     filename: '[name]-[hash].min.js',
     path: path.resolve(__dirname, DIST_DIR),
   },
   plugins: [
     new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin({
-      template: 'src/tpl/index.html',
+      template: 'src/_tpl/index.html',
       inject: 'body',
       filename: 'index.html',
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      openAnalyzer: true,
+      openAnalyzer: false,
       reportFilename: 'report.html',
     }),
   ],

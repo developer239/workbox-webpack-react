@@ -1,9 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import { BrowserRouter } from 'react-router-dom'
+import App from './app'
 import { initializeServiceWorkers } from './workbox'
 
 
+ReactDOM.render((
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+),
 // eslint-disable-next-line
-ReactDOM.render(<App />, document.getElementById('root'))
+  document.getElementById('root'))
 initializeServiceWorkers()

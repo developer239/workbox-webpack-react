@@ -17,6 +17,7 @@ module.exports = merge(common, {
     extensions: ['.js'],
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: './public',
     port: 3000,
   },
