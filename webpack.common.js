@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 
 const DIST_DIR = 'public'
@@ -17,6 +18,11 @@ module.exports = {
       template: 'src/tpl/index.html',
       inject: 'body',
       filename: 'index.html',
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: true,
+      reportFilename: 'report.html',
     }),
   ],
   module: {
