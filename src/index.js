@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { initializeServiceWorkers } from './serviceWorkers';
+import { initializeServiceWorkers } from './workbox';
 
 
 // eslint-disable-next-line

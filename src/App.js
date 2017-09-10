@@ -2,13 +2,11 @@ import React from 'react';
 
 
 const App = () => (
-  <div className="App">
-    <div className="App-header">
+  <div>
+    <header>
       <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      vvv
-    </p>
+    </header>
+    <article>Hello world!</article>
   </div>
 );
 

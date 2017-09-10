@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin({
-      template: 'src/index.tpl.html',
+      template: 'src/tpl/index.html',
       inject: 'body',
       filename: 'index.html',
     }),
