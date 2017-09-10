@@ -1,5 +1,5 @@
 {
-  "name": "with-webpack",
+  "name": "workbox-webpack-react",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

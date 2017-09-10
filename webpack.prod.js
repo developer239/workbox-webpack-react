@@ -1,9 +1,9 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const workboxPlugin = require('workbox-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const common = require('./webpack.common')
+const workboxPlugin = require('workbox-webpack-plugin')
 const path = require('path')
+const common = require('./webpack.common')
 
 
 const DIST_DIR = 'public'

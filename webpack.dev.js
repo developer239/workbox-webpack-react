@@ -2,6 +2,8 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 
 
+const DEV_PORT = 3000
+
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   module: {
@@ -19,6 +21,6 @@ module.exports = merge(common, {
   devServer: {
     historyApiFallback: true,
     contentBase: './public',
-    port: 3000,
+    port: DEV_PORT,
   },
 })

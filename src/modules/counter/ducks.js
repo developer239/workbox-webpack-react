@@ -5,26 +5,23 @@ export const initialState = {
   value: 0,
 }
 
-export default (state, action) => {
-  const { type } = action
+export default (state = initialState, action) => {
+  const type = action.type
 
-  if (state === undefined) {
-    return initialState
-  }
-
-  if (type === INCREMENT_COUNTER) {
-    return {
-      value: state.value + 1,
+  switch (type) {
+    case INCREMENT_COUNTER: {
+      return {
+        value: state.value + 1,
+      }
     }
-  }
-
-  if (type === DECREMENT_COUNTER) {
-    return {
-      value: state.value - 1,
+    case DECREMENT_COUNTER: {
+      return {
+        value: state.value - 1,
+      }
     }
+    default :
+      return state;
   }
-
-  return state
 }
 
 export const incrementCounter = () => ({

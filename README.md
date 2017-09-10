@@ -9,8 +9,10 @@ Uses:
  * Workbox
  * Webpack
  * React
+ * React Router
+ * Redux
 
- Commands:
+ __Commands:__
  
  `yarn install` installs the project
  

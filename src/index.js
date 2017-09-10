@@ -16,13 +16,15 @@ const store = createStore(
   applyMiddleware(...middleware),
 )
 
-ReactDOM.render((
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
-),
-// eslint-disable-next-line
-  document.getElementById('root'))
+ReactDOM.render(
+  (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  ),
+  // eslint-disable-next-line
+  document.getElementById('root')
+)
 initializeServiceWorkers()
