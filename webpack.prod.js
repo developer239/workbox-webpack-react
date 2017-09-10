@@ -28,7 +28,8 @@ module.exports = merge(common, {
       },
     }),
     new CopyWebpackPlugin([
-      { from: path.join(SRC_DIR, '/tpl/icon-192x192.ico'), to: 'icon-192x192.ico' },
+      { from: path.join(SRC_DIR, '/tpl/favicon.ico'), to: 'favicon.ico' },
+      { from: path.join(SRC_DIR, '/tpl/icon-192x192.png'), to: 'icon-192x192.png' },
       { from: path.join(SRC_DIR, '/tpl/icon-512x512.png'), to: 'icon-512x512.png' },
       { from: path.join(SRC_DIR, '/tpl/manifest.json'), to: 'manifest.json' },
     ]),
