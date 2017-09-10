@@ -2,9 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 const DIST_DIR = 'public'
+const SRC_DIR = 'src'
 
 module.exports = {
   entry: './src/index.js',
@@ -25,6 +27,12 @@ module.exports = {
       openAnalyzer: false,
       reportFilename: 'report.html',
     }),
+    new CopyWebpackPlugin([
+      { from: path.join(SRC_DIR, '/_tpl/favicon.ico'), to: 'favicon.ico' },
+      { from: path.join(SRC_DIR, '/_tpl/icon-192x192.png'), to: 'icon-192x192.png' },
+      { from: path.join(SRC_DIR, '/_tpl/icon-512x512.png'), to: 'icon-512x512.png' },
+      { from: path.join(SRC_DIR, '/_tpl/manifest.json'), to: 'manifest.json' },
+    ]),
   ],
   module: {
     rules: [
