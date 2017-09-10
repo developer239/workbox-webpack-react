@@ -19,3 +19,5 @@ Uses:
  `yarn server` runs http web server
  
  `yarn prod` builds files && runs http server
+ 
+ `yarn lint` runs eslint --fix on whole project
