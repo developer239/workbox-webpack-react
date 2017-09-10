@@ -2457,9 +2457,9 @@ http-proxy@^1.16.2, http-proxy@^1.8.1:
     eventemitter3 "1.x.x"
     requires-port "1.x.x"
 
-http-server@^0.10.0:
+http-server@skleeschulte/http-server:
   version "0.10.0"
-  resolved "https://registry.yarnpkg.com/http-server/-/http-server-0.10.0.tgz#b2a446b16a9db87ed3c622ba9beb1b085b1234a7"
+  resolved "https://codeload.github.com/skleeschulte/http-server/tar.gz/ecbb76e8b21138753c2a642a592cd65090eb03c7"
   dependencies:
     colors "1.0.3"
     corser "~2.0.0"

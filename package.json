@@ -5,13 +5,13 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "server": "http-server",
+    "server": "http-server --fallback index.html",
     "prod": "npm run build && npm run server",
     "dev": "webpack-dev-server --config webpack.dev.js --content-base public/",
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "http-server": "^0.10.0",
+    "http-server": "skleeschulte/http-server",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2"
