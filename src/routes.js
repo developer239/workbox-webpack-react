@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Counter from './pages/Counter'
+import Home from 'pages/Home'
+import About from 'pages/About'
+import Counter from 'pages/Counter'
 
 
 const Main = () => (

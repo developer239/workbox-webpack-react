@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { incrementCounter, decrementCounter } from '../../modules/counter/ducks'
+import { incrementCounter, decrementCounter } from 'modules/counter/ducks'
 
 
 export const CounterContainer = ({ increment, decrement, counterValue }) => (

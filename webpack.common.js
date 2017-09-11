@@ -48,4 +48,11 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.js'],
+    modules: [
+      './node_modules',
+      './src',
+    ],
+  },
 }
