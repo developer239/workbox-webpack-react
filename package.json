@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "server": "http-server --fallback index.html",
+    "server": "http-server -c 1 --fallback index.html",
     "prod": "npm run build && npm run server",
     "dev": "webpack-dev-server --config webpack.dev.js --content-base public/",
     "lint": "eslint . --fix"
