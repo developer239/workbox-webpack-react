@@ -16,6 +16,14 @@ const HomePage = () => (
       <li>React Router</li>
       <li>Redux</li>
     </ul>
+    <p>
+      See project repo on github:
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/developer239/workbox-webpack-react"
+      > https://github.com/developer239/workbox-webpack-react</a>
+    </p>
   </section>
 )
 
