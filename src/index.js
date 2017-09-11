@@ -16,15 +16,27 @@ const store = createStore(
   applyMiddleware(...middleware),
 )
 
-ReactDOM.render(
-  (
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  ),
-  // eslint-disable-next-line
-  document.getElementById('root')
-)
+const render = (AppComponent) => {
+  ReactDOM.render(
+    (
+      <Provider store={store}>
+        <BrowserRouter>
+          <AppComponent />
+        </BrowserRouter>
+      </Provider>
+    ),
+    // eslint-disable-next-line
+    document.getElementById('root')
+  )
+}
+
+render(App)
 initializeServiceWorkers()
+
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    // eslint-disable-next-line
+    const UpdatedApp = require('./app').default
+    render(UpdatedApp)
+  })
+}
