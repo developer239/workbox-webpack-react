@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -11,17 +10,6 @@ const SRC_DIR = 'src'
 
 module.exports = {
   entry: {
-    react: [
-      'react',
-      'react-dom',
-      'prop-types',
-    ],
-    router: 'react-router-dom',
-    redux: [
-      'redux',
-      'react-redux',
-      'redux-thunk',
-    ],
     app: './src/index.js',
   },
   output: {
@@ -31,10 +19,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['public']),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['react', 'router', 'redux'],
-      minChunks: Infinity,
-    }),
     new HtmlWebpackPlugin({
       template: 'src/_tpl/index.html',
       inject: 'body',
