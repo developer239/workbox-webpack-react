@@ -8,7 +8,8 @@
     "server": "http-server -c 1 --fallback index.html",
     "prod": "npm run build && npm run server",
     "dev": "webpack-dev-server --config webpack.dev.js --content-base public/",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "postinstall": "webpack --config webpack.dll.js"
   },
   "dependencies": {
     "http-server": "skleeschulte/http-server",

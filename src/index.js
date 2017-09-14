@@ -17,7 +17,7 @@ const render = (AppComponent) => {
       </Provider>
     ),
     // eslint-disable-next-line
-    document.getElementById('root')
+    document.getElementById('root'),
   )
 }
 
