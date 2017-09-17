@@ -7,13 +7,16 @@ const port = process.env.PORT ? process.env.PORT : 8081
 const dist = path.join(__dirname, 'public')
 
 
-app.use(express.static(dist))
-app.all('*', function (req, res, next) { // eslint-disable-line
-  if (req.headers['x-forwarded-proto'] === 'https') {
+function ensureSecure(req, res, next) { // eslint-disable-line
+  if (req.secure) {
     return next()
   }
-  res.redirect(`https://${req.headers.host}`)
-})
+
+  res.redirect(`https://${req.hostname} ${req.url}`)
+}
+
+app.use(express.static(dist))
+app.all('*', ensureSecure)
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(dist, 'index.html'))
