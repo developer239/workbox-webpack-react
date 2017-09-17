@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "express": "^4.15.4",
+    "heroku-ssl-redirect": "^0.0.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

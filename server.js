@@ -1,5 +1,7 @@
 const path = require('path')
 const express = require('express')
+const sslRedirect = require('heroku-ssl-redirect')
+
 
 const app = express()
 
@@ -9,14 +11,7 @@ const dist = path.join(__dirname, 'public')
 
 app.use(express.static(dist))
 
-app.all('/*', function (req, res, next) { // eslint-disable-line
-  if (/^http$/.test(req.protocol)) {
-    const host = req.headers.host.replace(/:[0-9]+$/g, '') // strip the port # if any
-    return res.redirect(`https://${host}${req.url}`, 301)
-  }
-
-  return next()
-})
+app.use(sslRedirect())
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(dist, 'index.html'))
