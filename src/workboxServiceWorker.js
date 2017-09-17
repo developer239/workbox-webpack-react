@@ -15,11 +15,6 @@ const workboxSW = new WorkboxSW({ clientsClaim: true })
  */
 workboxSW.precache([])
 
-/*
- * This one is little bit tricky. Server side routing is not set up yet. We have client side
- * routing only. Every react-router route has a fallback to '/' route in http-server. We don't
- * care about anything else yet.
- */
-workboxSW.router.registerRoute('/',
+workboxSW.router.registerRoute('/*',
   workboxSW.strategies.staleWhileRevalidate(),
 )
