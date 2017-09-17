@@ -8,6 +8,12 @@ const dist = path.join(__dirname, 'public')
 
 
 app.use(express.static(dist))
+app.all('*', function (req, res, next) { // eslint-disable-line
+  if (req.headers['x-forwarded-proto'] === 'https') {
+    return next()
+  }
+  res.redirect(`https://${req.headers.host}`)
+})
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(dist, 'index.html'))
