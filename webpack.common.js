@@ -24,10 +24,10 @@ module.exports = {
         exclude: ['vendor'],
       },
     ),
-    new webpack.DllReferencePlugin({
-      context: '.',
-      manifest: require('./public/vendor/vendor-manifest.json'),
-    }),
+    // new webpack.DllReferencePlugin({
+    //   context: '.',
+    //   manifest: require('./public/vendor/vendor-manifest.json'),
+    // }),
     new HtmlWebpackPlugin({
       template: 'src/_tpl/index.html',
       inject: 'body',
