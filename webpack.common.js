@@ -5,6 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
+
 const DIST_DIR = 'public'
 const SRC_DIR = 'src'
 
@@ -22,7 +23,7 @@ module.exports = {
       [DIST_DIR],
       {
         exclude: ['vendor'],
-      },
+      }
     ),
     new webpack.DllReferencePlugin({
       context: '.',
