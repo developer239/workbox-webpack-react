@@ -1,8 +1,10 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
+
 
 const DIST_DIR = 'public'
 const SRC_DIR = 'src'
@@ -17,7 +19,16 @@ module.exports = {
     path: path.resolve(__dirname, DIST_DIR),
   },
   plugins: [
-    new CleanWebpackPlugin([DIST_DIR]),
+    new CleanWebpackPlugin(
+      [DIST_DIR],
+      {
+        exclude: ['vendor'],
+      },
+    ),
+    new webpack.DllReferencePlugin({
+      context: '.',
+      manifest: require('./public/vendor/vendor-manifest.json'),
+    }),
     new HtmlWebpackPlugin({
       template: 'src/_tpl/index.html',
       inject: 'body',
