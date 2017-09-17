@@ -3,6 +3,8 @@ const path = require('path')
 
 
 const vendors = [
+  'express',
+  'heroku-ssl-redirect',
   'react',
   'react-dom',
   'react-redux',
