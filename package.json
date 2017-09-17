@@ -5,14 +5,14 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "server": "http-server -c 1 --fallback index.html",
+    "server": "node server",
     "prod": "npm run build && npm run server",
     "dev": "webpack-dev-server --config webpack.dev.js --content-base public/",
     "lint": "eslint . --fix",
     "postinstall": "webpack --config webpack.dll.js"
   },
   "dependencies": {
-    "http-server": "skleeschulte/http-server",
+    "express": "^4.15.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
