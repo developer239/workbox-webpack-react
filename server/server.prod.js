@@ -8,6 +8,12 @@ const DIST_DIR = path.resolve(__dirname, '..', 'public')
 const app = express()
 
 app.use(express.static(DIST_DIR))
+
+// Create route for static vendors.js file
+app.get('/vendor/vendors.js', (req, res) => {
+  res.sendFile(`${DIST_DIR}/vendor/vendors.js`)
+})
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
 })
