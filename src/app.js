@@ -1,13 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Header from 'components/Header'
-import Router from './routes'
+import { renderRoutes } from 'react-router-config'
 
 
-const App = () => (
+const App = ({ route }) => (
   <div>
     <Header />
-    <Router />
+    {renderRoutes(route.routes)}
   </div>
 )
+
+App.propTypes = {
+  route: PropTypes.any, // eslint-disable-line
+}
 
 export default App
