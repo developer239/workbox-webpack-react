@@ -10,9 +10,6 @@ const DIST_DIR = 'public'
 const SRC_DIR = 'src'
 
 module.exports = {
-  entry: {
-    app: './src/index.js',
-  },
   output: {
     publicPath: '/',
     filename: '[name]-[hash].min.js',
