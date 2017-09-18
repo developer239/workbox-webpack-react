@@ -1,4 +1,4 @@
-// const webpack = require('webpack')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -22,10 +22,10 @@ module.exports = {
         exclude: ['vendor'],
       }
     ),
-    // new webpack.DllReferencePlugin({
-    //   context: '.',
-    //   manifest: require('./public/vendor/vendor-manifest.json'),
-    // }),
+    new webpack.DllReferencePlugin({
+      context: '.',
+      manifest: require('./public/vendor/vendor-manifest.json'),
+    }),
     new HtmlWebpackPlugin({
       template: 'src/_tpl/index.html',
       inject: 'body',
