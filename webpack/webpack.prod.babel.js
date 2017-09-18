@@ -4,7 +4,7 @@ import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
 import workboxPlugin from 'workbox-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import path from 'path'
-import common from './webpack.common'
+import common from './webpack.common.babel'
 
 
 const DIST_DIR = 'public'

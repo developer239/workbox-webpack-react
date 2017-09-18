@@ -34,22 +34,32 @@ export default {
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'favicon.ico'), to: 'favicon.ico' },
-      { from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'icon-192x192.png'), to: 'icon-192x192.png' },
-      { from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'icon-512x512.png'), to: 'icon-512x512.png' },
-      { from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'manifest.json'), to: 'manifest.json' },
+      {
+        from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'icon-192x192.png'),
+        to: 'icon-192x192.png',
+      },
+      {
+        from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'icon-512x512.png'),
+        to: 'icon-512x512.png',
+      },
+      {
+        from: path.resolve(__dirname, '..', SRC_DIR, '_tpl', 'manifest.json'),
+        to: 'manifest.json',
+      },
     ]),
   ],
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env'],
-          },
-        },
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
     ],
   },
