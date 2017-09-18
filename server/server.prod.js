@@ -1,5 +1,6 @@
 import path from 'path'
 import express from 'express'
+import compression from 'compression'
 
 
 const PORT = process.env.PORT || 8080
@@ -8,6 +9,7 @@ const DIST_DIR = path.resolve(__dirname, '..', 'public')
 const app = express()
 
 app.use(express.static(DIST_DIR))
+app.use(compression())
 
 // Create route for static vendors.js file
 app.get('/vendor/vendors.js', (req, res) => {
