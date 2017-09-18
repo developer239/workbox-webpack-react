@@ -6,7 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.dev');
 
 
-const PORT = process.env.PORT ? process.env.PORT : 8081
+const PORT = process.env.PORT ? process.env.PORT : 8000
 const DIST_DIR = path.join(__dirname, 'public')
 const IS_DEVELOP = process.env.NODE_ENV !== 'production'
 
@@ -24,8 +24,6 @@ if (IS_DEVELOP) {
   )
   app.use(webpackHotMiddleware(compiler, {
     log: false,
-    path: "/__what",
-    heartbeat: 2000
   }))
 } else {
   app.use(express.static(DIST_DIR))
