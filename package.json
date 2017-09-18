@@ -11,6 +11,7 @@
     "postinstall": "webpack --config webpack/webpack.dll.babel.js"
   },
   "dependencies": {
+    "compression": "^1.7.0",
     "express": "^4.15.4",
     "heroku-ssl-redirect": "^0.0.4",
     "prop-types": "^15.5.10",
