@@ -1,11 +1,11 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const common = require('./webpack.common')
+import webpack from 'webpack'
+import merge from 'webpack-merge'
+import common from './webpack.common'
 
 
 const DEV_PORT = 3000
 
-module.exports = merge(common, {
+export default merge(common, {
   entry: [
     'webpack-hot-middleware/client',
     './src/index.js',

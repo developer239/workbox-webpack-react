@@ -1,19 +1,19 @@
-const path = require('path')
-const express = require('express')
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
-const webpackHotMiddleware = require('webpack-hot-middleware')
-const config = require('./webpack.dev')
+import path from 'path'
+import express from 'express'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import webpackDevConfig from './webpack.dev'
 
 
 const PORT = process.env.PORT ? process.env.PORT : 8000
-const DIST_DIR = path.join(__dirname, 'public')
 const IS_DEVELOP = process.env.NODE_ENV !== 'production'
+const DIST_DIR = path.join(__dirname, 'public')
 
 const app = express()
 
 if (IS_DEVELOP) {
-  const compiler = webpack(config)
+  const compiler = webpack(webpackDevConfig)
   app.get('/vendor/vendors.js', (req, res) => {
     res.sendFile(`${DIST_DIR}/vendor/vendors.js`)
   })
@@ -21,9 +21,9 @@ if (IS_DEVELOP) {
     webpackDevMiddleware(
       compiler,
       {
-        publicPath: config.output.publicPath,
+        publicPath: webpackDevConfig.output.publicPath,
       },
-    )
+    ),
   )
   app.use(webpackHotMiddleware(compiler, {
     log: false,

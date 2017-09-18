@@ -1,15 +1,17 @@
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const path = require('path')
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CleanWebpackPlugin from 'clean-webpack-plugin'
+import WebpackBundleAnalyzer from 'webpack-bundle-analyzer'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import path from 'path'
 
+
+const BundleAnalyzerPlugin = WebpackBundleAnalyzer.BundleAnalyzerPlugin
 
 const DIST_DIR = 'public'
 const SRC_DIR = 'src'
 
-module.exports = {
+export default {
   output: {
     publicPath: '/',
     filename: '[name]-[hash].min.js',
@@ -20,7 +22,7 @@ module.exports = {
       [DIST_DIR],
       {
         exclude: ['vendor'],
-      }
+      },
     ),
     new webpack.DllReferencePlugin({
       context: '.',
