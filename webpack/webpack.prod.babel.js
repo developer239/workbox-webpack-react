@@ -25,8 +25,8 @@ export default merge(common, {
     new workboxPlugin({
       globDirectory: DIST_DIR,
       globPatterns: ['**/*.{html,js,css,ico}'],
-      swDest: path.join(DIST_DIR, 'sw.js'),
-      swSrc: path.join(SRC_DIR, 'workboxServiceWorker.js'),
+      swDest: path.join(__dirname, '..', DIST_DIR, 'sw.js'),
+      swSrc: path.join(__dirname, '..', SRC_DIR, 'workboxServiceWorker.js'),
       modifyUrlPrefix: {
         '/': '',
       },
