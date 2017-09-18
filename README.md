@@ -20,8 +20,6 @@ Uses:
  
  `yarn build` compiles project into production ready files
  
- `yarn server` runs http web server
- 
- `yarn prod` builds files && runs http server
+ `yarn prod` runs express server
  
  `yarn lint` runs eslint --fix on whole project
