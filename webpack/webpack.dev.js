@@ -7,7 +7,7 @@ const DEV_PORT = 3000
 
 export default merge(common, {
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?reload=true',
     './src/index.js',
   ],
   devtool: 'inline-source-map',
