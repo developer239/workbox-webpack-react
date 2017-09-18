@@ -1,11 +1,15 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const common = require('./webpack.common')
+import webpack from 'webpack'
+import merge from 'webpack-merge'
+import common from './webpack.common.babel'
 
 
 const DEV_PORT = 3000
 
-module.exports = merge(common, {
+export default merge(common, {
+  entry: [
+    'webpack-hot-middleware/client?reload=true&overlay=false',
+    './src/index.js',
+  ],
   devtool: 'inline-source-map',
   module: {
     rules: [

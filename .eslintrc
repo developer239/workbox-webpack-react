@@ -1,14 +1,13 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "plugins": [
     "react"
   ],
   "settings": {
     "import/resolver": {
-      "node": {
-        "paths": [
-          "./src"
-        ]
+      "webpack": {
+        "config": "webpack/webpack.common.babel.js"
       }
     }
   },
