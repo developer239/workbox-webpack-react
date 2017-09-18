@@ -11,6 +11,9 @@ const DIST_DIR = 'public'
 const SRC_DIR = 'src'
 
 module.exports = merge(common, {
+  entry: {
+    app: './src/index.js',
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

@@ -1,23 +1,38 @@
 const path = require('path')
 const express = require('express')
-const sslRedirect = require('heroku-ssl-redirect')
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const config = require('./webpack.dev');
 
+
+const PORT = process.env.PORT ? process.env.PORT : 8081
+const DIST_DIR = path.join(__dirname, 'public')
+const IS_DEVELOP = process.env.NODE_ENV !== 'production'
 
 const app = express()
-const port = process.env.PORT ? process.env.PORT : 8081
-const dist = path.join(__dirname, 'public')
 
-app.use(express.static(dist))
+if (IS_DEVELOP) {
+  const compiler = webpack(config)
+  app.use(
+    webpackDevMiddleware(
+      compiler,
+      {
+        publicPath: config.output.publicPath,
+      }
+    )
+  )
+  app.use(webpackHotMiddleware(compiler))
+} else {
+  app.use(express.static(DIST_DIR))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  })
+}
 
-app.use(sslRedirect())
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(dist, 'index.html'))
-})
-
-app.listen(port, (error) => {
+app.listen(PORT, (error) => {
   if (error) {
-    console.log(error) // eslint-disable-line no-console
+    console.log(error)
   }
-  console.info('Express is listening on port %s.', port) // eslint-disable-line no-console
+  console.info('Express is listening on PORT %s.', PORT)
 })

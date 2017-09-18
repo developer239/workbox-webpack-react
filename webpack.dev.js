@@ -6,6 +6,10 @@ const common = require('./webpack.common')
 const DEV_PORT = 3000
 
 module.exports = merge(common, {
+  entry: {
+    hot: 'webpack-hot-middleware/client',
+    app: './src/index.js',
+  },
   devtool: 'inline-source-map',
   module: {
     rules: [
