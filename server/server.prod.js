@@ -1,6 +1,6 @@
-import path from 'path'
-import express from 'express'
-import compression from 'compression'
+const path = require('path')
+const express = require('express')
+const compression = require('compression')
 
 
 const PORT = process.env.PORT || 8080
