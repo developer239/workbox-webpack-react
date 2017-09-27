@@ -47,3 +47,13 @@ __Uses:__
 * This app is heroku ready. You have to set `heroku config:set NPM_CONFIG_PRODUCTION=false` on your heroku server. Everything else is prepared. `Procfile` will run `yarn prod` command.
 
 * New npm dependencies should be added into the `vendors` array in `/webpack/webpack.dll.babel.js`. Dll file with vendor libraries is generated after every `yarn install`. This makes webpack builds a lot faster.
+
+#### Lighthouse
+
+![lighthouse score](https://preview.ibb.co/myjS4Q/lighthouse.png)
+
+
+ * 100 % progressive web app
+ * 73 % performance *(this is mostly because of missing server side rendering)*
+ * 100 % accessibility
+ * 92 % best practices *(missing http2)*
