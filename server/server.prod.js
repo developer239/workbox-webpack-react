@@ -8,8 +8,18 @@ const DIST_DIR = path.resolve(__dirname, '..', 'public')
 
 const app = express()
 
-app.use(express.static(DIST_DIR))
+// require https
+app.use((req, res, next) => {
+  if (req.hostname !== 'localhost' && req.get('X-Forwarded-Proto') !== 'https') {
+    return res.redirect(`https://${req.hostname}${req.url}`)
+  }
+  return next()
+})
+
+// https://github.com/expressjs/compression
 app.use(compression())
+
+app.use(express.static(DIST_DIR))
 
 // Create route for static vendors.js file
 app.get('/vendor/vendors.js', (req, res) => {
