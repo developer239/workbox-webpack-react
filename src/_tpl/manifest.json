@@ -1,6 +1,6 @@
 {
-  "short_name": "PWA React App",
-  "name": "Workbox Webpack React PWA App",
+  "short_name": "PWA React",
+  "name": "React PWA",
   "start_url": "./index.html",
   "icons": [
     {
