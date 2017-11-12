@@ -11,15 +11,6 @@ export default merge(common, {
     './src/index.js',
   ],
   devtool: 'inline-source-map',
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
-    ],
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
