@@ -8,8 +8,8 @@
     "prod": "NODE_ENV=production node server/server.prod.js",
     "dev": "NODE_ENV=development node_modules/.bin/babel-node server/server.dev.js",
     "lint": "eslint . --fix",
-    "postinstall": "webpack --config webpack/webpack.dll.babel.js"
-
+    "postinstall": "webpack --config webpack/webpack.dll.babel.js",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "babel-preset-latest": "^6.24.1",
