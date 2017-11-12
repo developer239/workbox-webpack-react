@@ -30,10 +30,10 @@ const mapStateToProps = state => ({
   counterValue: state.counter.value,
 })
 
-const mapDispatchToProps = dispatch => ({
-  increment: () => dispatch(incrementCounter()),
-  decrement: () => dispatch(decrementCounter()),
-})
+const mapDispatchToProps = {
+  increment: incrementCounter,
+  decrement: decrementCounter,
+}
 
 export default connect(
   mapStateToProps,
