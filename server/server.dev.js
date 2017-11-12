@@ -1,6 +1,7 @@
 import path from 'path'
 import express from 'express'
 import webpack from 'webpack'
+import invariant from 'invariant'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackDevConfig from '../webpack/webpack.dev.babel'
@@ -38,8 +39,6 @@ app.use('*', (req, res, next) => {
 })
 
 app.listen(PORT, (error) => {
-  if (error) {
-    console.log(error)
-  }
+  invariant(!error, 'aaa')
   console.info('Express is listening on PORT %s.', PORT)
 })

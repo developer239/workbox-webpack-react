@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const compression = require('compression')
+const invariant = require('invariant')
 
 
 const PORT = process.env.PORT || 8080
@@ -31,8 +32,6 @@ app.get('*', (req, res) => {
 })
 
 app.listen(PORT, (error) => {
-  if (error) {
-    console.log(error)
-  }
+  invariant(!error, error)
   console.info('Express is listening on PORT %s.', PORT)
 })
