@@ -1,5 +1,5 @@
 import Home from 'pages/Home'
-import Counter from 'pages/Counter/Home'
+import Counter from 'pages/Counter'
 import App from './app'
 
 
