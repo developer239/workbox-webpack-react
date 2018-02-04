@@ -6,12 +6,12 @@ Progressive web app that takes advantage of new technologies to bring the best o
 
 __Uses:__
 
- * Workbox
- * Express
- * Webpack
- * React
- * React Router
- * Redux
+ * [Workbox-Sw](https://github.com/GoogleChrome/workbox) 2.1.2
+ * [Express](https://github.com/expressjs/express) 4.16.2
+ * [Webpack](https://github.com/webpack/webpack) 3.10.0
+ * [React](https://github.com/facebook/react) 16.2.0
+ * [React Router](https://github.com/ReactTraining/react-router) 4.2.2
+ * [Redux](https://github.com/reactjs/redux) 3.7.2
 
 #### Installing the project
  
@@ -37,8 +37,8 @@ __Uses:__
  #### Code Quality Tools
  
  * .editorconfig
- * eslint
- * airbnb
+ * [eslint](https://github.com/eslint/eslint) 4.17.0
+ * [airbnb](https://www.npmjs.com/package/eslint-config-airbnb) 16.1.0
 
 #### Other tips
 
@@ -47,13 +47,3 @@ __Uses:__
 * This app is heroku ready. You have to set `heroku config:set NPM_CONFIG_PRODUCTION=false` on your heroku server. Everything else is prepared. `Procfile` will run `yarn prod` command.
 
 * New npm dependencies should be added into the `vendors` array in `/webpack/webpack.dll.babel.js`. Dll file with vendor libraries is generated after every `yarn install`. This makes webpack builds a lot faster.
-
-#### Lighthouse
-
-![lighthouse score](https://preview.ibb.co/myjS4Q/lighthouse.png)
-
-
- * 100 % progressive web app
- * 73 % performance *(this is mostly because of missing server side rendering)*
- * 100 % accessibility
- * 92 % best practices *(missing http2)*
