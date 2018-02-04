@@ -13,7 +13,10 @@ const DIST_DIR = path.resolve(__dirname, '..', 'public')
 const app = express()
 
 const compiler = webpack(webpackDevConfig)
-app.use(webpackDevMiddleware(compiler, { publicPath: webpackDevConfig.output.publicPath }))
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: webpackDevConfig.output.publicPath,
+  quiet: true,
+}))
 app.use(webpackHotMiddleware(compiler, { log: false }))
 
 // Serve static files from /public directory
@@ -39,6 +42,6 @@ app.use('*', (req, res, next) => {
 })
 
 app.listen(PORT, (error) => {
-  invariant(!error, 'aaa')
+  invariant(!error, 'Something failed: ', error)
   console.info('Express is listening on PORT %s.', PORT)
 })

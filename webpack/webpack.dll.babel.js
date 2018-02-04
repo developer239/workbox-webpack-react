@@ -3,9 +3,11 @@ import path from 'path'
 
 
 const vendors = [
+  'prop-types',
   'react',
   'react-dom',
   'react-redux',
+  'react-router-config',
   'react-router-dom',
   'redux',
   'redux-thunk',

@@ -12,7 +12,6 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "babel-preset-latest": "^6.24.1",
     "compression": "^1.7.1",
     "express": "^4.16.2",
     "invariant": "^2.2.2",
